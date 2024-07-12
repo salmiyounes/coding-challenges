@@ -1,8 +1,7 @@
 from typing import List
-data: List[str] = open('input.txt', 'r').read().split('\n')
+data: List[str] = open('input.txt', 'r').read().strip().split('\n')
 result: int = 0
 paper: int = 0
-del data[-1]
 slack: int = 0
 
 for d in data:
@@ -10,5 +9,5 @@ for d in data:
 	slack += min(l*w, h*l, w*h)
 	paper += 2 * (l*w + w*h + h*l) 
 
-print (paper + slack)
+print (f'Part 1: {paper+slack}')
 
